@@ -1,0 +1,33 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Activation functions
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+def relu(x):
+    return np.maximum(0, x)
+
+def tanh(x):
+    return np.tanh(x)
+
+# Input range
+x = np.linspace(-10, 10, 100)
+
+# Output
+y_sigmoid = sigmoid(x)
+y_relu = relu(x)
+y_tanh = tanh(x)
+
+# Plot
+plt.figure(figsize=(8,6))
+# Write a Python program to plot a few activation functions that are being used in neural networks
+plt.plot(x, y_sigmoid, label="Sigmoid")
+plt.plot(x, y_relu, label="ReLU")
+plt.plot(x, y_tanh, label="Tanh")
+
+plt.legend()
+plt.grid()
+plt.title("Activation Functions")
+
+plt.show()
